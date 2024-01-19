@@ -38,6 +38,7 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
 
       customer
     end
+    let(:lead_id) { '123leadid' }
 
     let(:switch_source) { described_class.switch_source(lead) }
 
@@ -45,7 +46,6 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
       let(:call_url) { 'https://toribaveiculos.f1sales.org/public/api/v1/leads' }
       let(:lead_class_double) { class_double('Lead').as_stubbed_const }
       let(:count_lead) { 0 }
-      let(:lead_id) { '123leadid' }
       let(:lead_created_payload) do
         {
           'data' => {
@@ -64,8 +64,6 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
       let(:lead_payload) do
         {
           lead: {
-            message: lead.message,
-            description: lead.description,
             customer: {
               name: customer.name,
               email: customer.email,
@@ -74,12 +72,14 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
             product: {
               name: product.name
             },
+            source: {
+              name: 'Facebook - Toriba Veículos Volkswagen'
+            },
+            message: lead.message,
+            description: lead.description,
             transferred_path: {
               from: 'toribapompeia',
               id: lead_id
-            },
-            source: {
-              name: 'Facebook - Toriba Veículos Volkswagen'
             }
           }
         }

@@ -74,10 +74,8 @@ module Toribapompeia
       end
 
       def post_to_toribaveiculos
-        byebug
         response = HTTP.post('https://toribaveiculos.f1sales.org/public/api/v1/leads', json: lead_payload)
 
-        byebug
         JSON.parse(response.body)
       end
 
