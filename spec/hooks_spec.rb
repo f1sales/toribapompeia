@@ -11,7 +11,7 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
       lead.customer = customer
       lead.message = 'message'
       lead.description = 'description'
-      lead.id = '123leadid'
+      lead.id = lead_id
 
       lead
     end
@@ -55,7 +55,7 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
       end
 
       before do
-        source.name = 'Facebook'
+        source.name = 'Facebook - Toriba Veículos Volkswagen'
         stub_request(:post, call_url).with(body: lead_payload.to_json).to_return(status: 200, body: lead_created_payload.to_json, headers: {})
         allow(lead_class_double).to receive(:where).with(source: source)
                                                    .and_return(double('relation', count: count_lead))
