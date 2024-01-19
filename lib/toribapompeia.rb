@@ -126,10 +126,3 @@ module Toribapompeia
     end
   end
 end
-
-
-'{"lead":{"customer":{"name":"customer name","email":"customer email","phone":"customer phone"},"product":{"name":"product name"},"source":{"name":"Facebook - Toriba Veículos Volkswagen"},"message":"message","description":"description","transferred_path":{"from":"toribapompeia","id":"123leadid"}}}'
-
-'{"lead":{"customer":{"name":"customer name","email":"customer email","phone":"customer phone"},"product":{"name":"product name"},"source":{"name":"Facebook - Toriba Veículos Volkswagen"},"message":"message","description":"description","transferred_path":{"from":"toribapompeia","id":"123leadid"}}}'
-
-'{"lead":{"message":"message","description":"description","customer":{"name":"customer name","email":"customer email","phone":"customer phone"},"product":{"name":"product name"},"transferred_path":{"from":"toribapompeia","id":"123leadid"},"source":{"name":"Facebook - Toriba Veículos Volkswagen"}}}'
