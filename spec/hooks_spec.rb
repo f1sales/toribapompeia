@@ -1,4 +1,3 @@
-# require File.expand_path 'spec_helper.rb', __dir__
 require 'ostruct'
 require 'byebug'
 
@@ -56,7 +55,8 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
 
       before do
         source.name = 'Facebook - Toriba Veículos Volkswagen'
-        stub_request(:post, call_url).with(body: lead_payload.to_json).to_return(status: 200, body: lead_created_payload.to_json, headers: {})
+        stub_request(:post, call_url).with(body: lead_payload.to_json)
+                                     .to_return(status: 200, body: lead_created_payload.to_json, headers: {})
         allow(lead_class_double).to receive(:where).with(source: source)
                                                    .and_return(double('relation', count: count_lead))
       end
