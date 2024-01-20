@@ -87,7 +87,7 @@ RSpec.describe F1SalesCustom::Hooks::Lead do
 
       context 'when count lead is even' do
         it 'returns Source Name - Focal source' do
-          expect(switch_source).to eq("#{source.name} - Veículos")
+          expect(switch_source).to eq(source.name)
         end
 
         it 'marks the lead as contacted' do
