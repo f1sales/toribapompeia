@@ -68,7 +68,6 @@ module Toribapompeia
       def distribute_facebook_leads
         return if Lead.where(source: source).count.odd?
 
-        @source_name = "#{@source_name} - Veículos"
         post_to_toribaveiculos
         @lead.interaction = :contacted
       end
